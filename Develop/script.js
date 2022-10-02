@@ -20,6 +20,30 @@ var selectUppercase = window.confirm("Would you like to have uppercase letters i
 var selectNumbers = window.confirm("Would you like to have numbers in your password?")
 var selectSymbols = window.confirm("Would you like to have symbols in your password?")
 
+var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+var symbols = ["!", "@", "#", "$", "%", "&", "*", "_", "-", "?"]
+
+var passwordCriteria
+
+if (selectLowercase){
+passwordCriteria.push(lowercase)
+}
+
+if (selectUppercase){
+passwordCriteria.push(uppercase)
+}
+
+if (selectNumbers){
+passwordCriteria.push(numbers)
+}
+
+if (selectSymbols){
+passwordCriteria.push(symbols)
+}
+
+
 
   // if(isNaN(passwordLength < 8)){
   //   window.alert("Please enter a password longer than 8 characters.")
