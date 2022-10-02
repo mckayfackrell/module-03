@@ -1,4 +1,12 @@
 // Assignment code here
+function randomInt(min, max){
+  return Math.floor(Math.random()*(min - max)+ min)
+}
+
+function getRandomItem(list){
+  return list[randomInt(0, list.length - 1)]
+}
+
 function generatePassword(){
 
   var userInput = window.prompt("How long do you want the password?")
@@ -20,34 +28,36 @@ var selectUppercase = window.confirm("Would you like to have uppercase letters i
 var selectNumbers = window.confirm("Would you like to have numbers in your password?")
 var selectSymbols = window.confirm("Would you like to have symbols in your password?")
 
-var lowercase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-var uppercase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-var numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
-var symbols = ["!", "@", "#", "$", "%", "&", "*", "_", "-", "?"]
+var lowercaseList = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+var uppercaseList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+var numbersList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
+var symbolsList = ["!", "@", "#", "$", "%", "&", "*", "_", "-", "?"]
 
-var passwordCriteria
+var passwordCriteria = []
 
 if (selectLowercase){
-passwordCriteria.push(lowercase)
+passwordCriteria.push(lowercaseList)
 }
 
 if (selectUppercase){
-passwordCriteria.push(uppercase)
+passwordCriteria.push(uppercaseList)
 }
 
 if (selectNumbers){
-passwordCriteria.push(numbers)
+passwordCriteria.push(numbersList)
 }
 
 if (selectSymbols){
-passwordCriteria.push(symbols)
+passwordCriteria.push(symbolsList)
 }
 
+console.log(passwordCriteria)
 
+var generatePassword = ""
 
-  // if(isNaN(passwordLength < 8)){
-  //   window.alert("Please enter a password longer than 8 characters.")
-  // }
+for (var i = 0; i < passwordLength; i++){
+  var randomList = getRandomItem(passwordCriteria)
+}
 
 
 
