@@ -56,6 +56,11 @@ if (selectSymbols){
 passwordCriteria.push(symbolsList)
 }
 
+if (!selectLowercase + !selectUppercase + !selectNumbers + !selectSymbols){
+  window.alert("You must select at least one characteristic for your password!")
+  return
+}
+
 console.log(passwordCriteria)
 
 var generatePassword = ""
@@ -64,6 +69,7 @@ for (var i = 0; i < passwordLength; i++){
   var randomList = getRandomItem(passwordCriteria)
   var randomSym = getRandomItem(randomList) 
   console.log(randomSym)
+  generatePassword += randomSym
 }
 
 
