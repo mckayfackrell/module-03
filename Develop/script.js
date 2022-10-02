@@ -9,7 +9,7 @@ function randomInt(min, max){
 }
 
 function getRandomItem(list){
-  return list[randomInt(list.length)]
+  return list[randomInt(list.length)]  
 }
 
 function generatePassword(){
@@ -56,11 +56,6 @@ if (selectSymbols){
 passwordCriteria.push(symbolsList)
 }
 
-if (!selectLowercase + !selectUppercase + !selectNumbers + !selectSymbols){
-  window.alert("You must select at least one characteristic for your password!")
-  return
-}
-
 console.log(passwordCriteria)
 
 var generatePassword = ""
@@ -68,11 +63,10 @@ var generatePassword = ""
 for (var i = 0; i < passwordLength; i++){
   var randomList = getRandomItem(passwordCriteria)
   var randomSym = getRandomItem(randomList) 
-  console.log(randomSym)
   generatePassword += randomSym
 }
 
-
+return generatePassword
 
 
 }
@@ -91,3 +85,6 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+//make a while loop for the 8-128 selector
+//create prompt for when the user does not select any criteria for password
