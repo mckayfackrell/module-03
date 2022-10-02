@@ -1,10 +1,15 @@
 // Assignment code here
 function randomInt(min, max){
-  return Math.floor(Math.random()*(min - max)+ min)
+  if (!max){
+    max = min
+    min = 0
+  }
+  var ran = Math.random()
+  return Math.floor(min*(1-ran) + ran*max)
 }
 
 function getRandomItem(list){
-  return list[randomInt(0, list.length - 1)]
+  return list[randomInt(list.length)]
 }
 
 function generatePassword(){
@@ -57,6 +62,8 @@ var generatePassword = ""
 
 for (var i = 0; i < passwordLength; i++){
   var randomList = getRandomItem(passwordCriteria)
+  var randomSym = getRandomItem(randomList) 
+  console.log(randomSym)
 }
 
 
