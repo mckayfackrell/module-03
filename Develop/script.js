@@ -60,6 +60,11 @@ if (selectSymbols){
 passwordCriteria.push(symbolsList)
 }
 
+if (!selectLowercase && !selectNumbers && !selectSymbols && !selectUppercase){
+  window.alert("You must select at least one criteria for the password!")
+  return
+}
+
 // this just helps check to make sure the password is being logged in the consol before producing the final 
 console.log(passwordCriteria)
 
