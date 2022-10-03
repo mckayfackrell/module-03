@@ -23,6 +23,7 @@ function generatePassword(){
     return
   }
 
+  // if the password length is less than 8 or the password length is greater than 128 then prompt the user to choose a number between 8-128
   if (passwordLength < 8 || passwordLength > 128){
     window.prompt("Choose a number between 8-128")
     return
@@ -38,8 +39,10 @@ var uppercaseList = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L",
 var numbersList = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"]
 var symbolsList = ["!", "@", "#", "$", "%", "&", "*", "_", "-", "?"]
 
+// this var passwordCriteria is what the password will be after the user makes selections
 var passwordCriteria = []
 
+// these if statements are if the user has selected the lists then to push the information from the lists to be put into the password 
 if (selectLowercase){
 passwordCriteria.push(lowercaseList)
 }
@@ -56,10 +59,13 @@ if (selectSymbols){
 passwordCriteria.push(symbolsList)
 }
 
+// this just helps check to make sure the password is being logged in the consol before producing the final 
 console.log(passwordCriteria)
 
+// This puts what has been logged into the whole function on line 15
 var generatePassword = ""
 
+// This takes items from the lists and randomizes the list to include characters form each list in the password
 for (var i = 0; i < passwordLength; i++){
   var randomList = getRandomItem(passwordCriteria)
   var randomSym = getRandomItem(randomList) 
