@@ -97,6 +97,3 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
-//make a while loop for the 8-128 selector
-//create prompt for when the user does not select any criteria for password
