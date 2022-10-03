@@ -18,6 +18,7 @@ function generatePassword(){
   
   var passwordLength = parseInt(userInput)
 
+  //if is not a number for password length then prompt the user that is is not a number value and they need to try again
   if(isNaN(passwordLength)){
     window.alert("Try again, that is not a number!")
     return
