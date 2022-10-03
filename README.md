@@ -2,8 +2,10 @@
 ## Description
 This website creates a randomly generated password with numbers, letters, and characters. 
 
-## Installation
-N/A
+## URL and Screenshot
+
+
+![screenshot](https://user-images.githubusercontent.com/110206514/193669277-6f98938b-505f-4f14-8875-4f2c94cb4152.jpg)
 
 ## Usage
  This website randomly generates a password that meets certain criteria which provides greater security.
