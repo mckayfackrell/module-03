@@ -14,21 +14,16 @@ function getRandomItem(list){
 
 function generatePassword(){
 
-  var userInput = window.prompt("How long do you want the password?")
+
+do {
+ var userInput = window.prompt("How long do you want the password? Must be between 8-128 characters.")
+ console.log(userInput) 
+if (userInput === null){
+  return
+}
+} while (isNaN(userInput)||userInput < 8 || userInput > 128)  
   
   var passwordLength = parseInt(userInput)
-
-  //if is not a number for password length then prompt the user that is is not a number value and they need to try again
-  if(isNaN(passwordLength)){
-    window.alert("Try again, that is not a number!")
-    return
-  }
-
-  // if the password length is less than 8 or the password length is greater than 128 then prompt the user to choose a number between 8-128
-  if (passwordLength < 8 || passwordLength > 128){
-    window.prompt("Choose a number between 8-128")
-    return
-  }
 
 var selectLowercase = window.confirm("Would you like to have lowercase letters in your password?")
 var selectUppercase = window.confirm("Would you like to have uppercase letters in your password?")
@@ -62,23 +57,23 @@ passwordCriteria.push(symbolsList)
 
 if (!selectLowercase && !selectNumbers && !selectSymbols && !selectUppercase){
   window.alert("You must select at least one criteria for the password!")
-  return
+  return generatePassword()
 }
 
 // this just helps check to make sure the password is being logged in the consol before producing the final 
 console.log(passwordCriteria)
 
 // This puts what has been logged into the whole function on line 15
-var generatePassword = ""
+var generatePasswordStr = ""
 
 // This takes items from the lists and randomizes the list to include characters form each list in the password
 for (var i = 0; i < passwordLength; i++){
   var randomList = getRandomItem(passwordCriteria)
   var randomSym = getRandomItem(randomList) 
-  generatePassword += randomSym
+  generatePasswordStr += randomSym
 }
-
-return generatePassword
+console.log(generatePasswordStr)
+return generatePasswordStr
 
 
 }
