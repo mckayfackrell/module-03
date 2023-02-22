@@ -3,7 +3,7 @@
 This website creates a randomly generated password with numbers, letters, and characters. 
 
 ## URL and Screenshot
-https://mckayfackrell.github.io/module-03/
+[Password Generator](https://mckayfackrell.github.io/module-03-Password-Generator/)
 
 ![screenshot](https://user-images.githubusercontent.com/110206514/193669277-6f98938b-505f-4f14-8875-4f2c94cb4152.jpg)
 
